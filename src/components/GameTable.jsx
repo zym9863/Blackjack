@@ -1,8 +1,8 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import Hand from './Hand'
 import Controls from './Controls'
 import BettingArea from './BettingArea'
-import { calculateHandValue } from '../logic/rules'
+import { calculateHandValue, isBusted } from '../logic/rules'
 import { sounds } from '../audio/sounds'
 import styles from './GameTable.module.css'
 
@@ -31,6 +31,18 @@ function getResultMessages(result, bets) {
 export default function GameTable({ state, dispatch, ACTIONS }) {
   const { phase, chips, bet, bets, playerHands, dealerHand, activeHandIndex, result } = state
   const isSplit = playerHands.length > 1
+  const prevPhaseRef = useRef(phase)
+
+  // Play flip sound when dealer reveals hidden card
+  useEffect(() => {
+    const prevPhase = prevPhaseRef.current
+    prevPhaseRef.current = phase
+
+    if ((phase === 'dealerTurn' || phase === 'settled') &&
+        prevPhase !== 'dealerTurn' && prevPhase !== 'settled') {
+      sounds.flip()
+    }
+  }, [phase])
 
   // Play sound effects based on phase transitions
   useEffect(() => {
@@ -38,16 +50,19 @@ export default function GameTable({ state, dispatch, ACTIONS }) {
       const hasBlackjack = result.includes('blackjack')
       const hasWin = result.includes('win')
       const allLose = result.every(r => r === 'lose')
+      const anyBusted = playerHands.some(hand => isBusted(hand))
 
       if (hasBlackjack) {
         sounds.blackjack()
       } else if (hasWin) {
         sounds.win()
+      } else if (allLose && anyBusted) {
+        sounds.bust()
       } else if (allLose) {
         sounds.lose()
       }
     }
-  }, [phase, result])
+  }, [phase, result, playerHands])
 
   const resultMessages = getResultMessages(result, bets)
 

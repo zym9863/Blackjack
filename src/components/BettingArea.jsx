@@ -15,7 +15,11 @@ export default function BettingArea({ chips, bet, dispatch, ACTIONS }) {
 
   const handleDeal = () => {
     if (bet >= 10) {
+      // Staggered deal sounds for 4 cards
       sounds.dealCard()
+      setTimeout(() => sounds.dealCard(), 150)
+      setTimeout(() => sounds.dealCard(), 300)
+      setTimeout(() => sounds.dealCard(), 450)
       dispatch({ type: ACTIONS.DEAL })
     }
   }
