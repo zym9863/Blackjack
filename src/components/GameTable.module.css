@@ -1,0 +1,156 @@
+.table {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.03) 2px,
+      rgba(0, 0, 0, 0.03) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.03) 2px,
+      rgba(0, 0, 0, 0.03) 4px
+    ),
+    linear-gradient(135deg, #0a5c36 0%, #0d7a48 50%, #0a5c36 100%);
+  position: relative;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 2px solid #d4a574;
+}
+
+.chipsDisplay {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #d4a574;
+}
+
+.coinIcon {
+  font-size: 24px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #d4a574;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  letter-spacing: 4px;
+}
+
+.placeholder {
+  width: 100px;
+}
+
+/* Play area */
+.playArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 24px;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  border-left: 2px solid rgba(212, 165, 116, 0.15);
+  border-right: 2px solid rgba(212, 165, 116, 0.15);
+}
+
+/* Dealer area */
+.dealerArea {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+}
+
+/* Middle area */
+.middleArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 60px;
+  padding: 8px 0;
+}
+
+.resultMessage {
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.resultWin {
+  color: #d4a574;
+}
+
+.resultBlackjack {
+  color: #d4a574;
+  font-size: 36px;
+  text-shadow: 0 0 20px rgba(212, 165, 116, 0.6);
+}
+
+.resultLose {
+  color: #e74c3c;
+}
+
+.resultPush {
+  color: #ecf0f1;
+}
+
+.betInfo {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Player area */
+.playerArea {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 8px 0;
+}
+
+.handWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.handLabel {
+  font-size: 12px;
+  color: rgba(212, 165, 116, 0.7);
+  margin-top: 4px;
+}
+
+/* Bottom area */
+.bottomArea {
+  padding: 8px 0 16px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
