@@ -49,3 +49,44 @@
 .active .cardsRow {
   filter: brightness(1.05);
 }
+
+/* Responsive: Tablet */
+@media (max-width: 768px) {
+  .cardSlot:not(:first-child) {
+    margin-left: -25px;
+  }
+
+  .cardsRow {
+    min-height: 84px;
+  }
+
+  .label {
+    font-size: 12px;
+  }
+
+  .valueBadge {
+    font-size: 13px;
+    padding: 2px 10px;
+  }
+}
+
+/* Responsive: Mobile */
+@media (max-width: 480px) {
+  .cardSlot:not(:first-child) {
+    margin-left: -20px;
+  }
+
+  .cardsRow {
+    min-height: 70px;
+  }
+
+  .label {
+    font-size: 11px;
+  }
+
+  .valueBadge {
+    font-size: 12px;
+    padding: 1px 8px;
+    margin-top: 4px;
+  }
+}

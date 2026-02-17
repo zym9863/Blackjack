@@ -208,3 +208,106 @@
     color: #e74c3c;
   }
 }
+
+/* Responsive: Tablet */
+@media (max-width: 768px) {
+  .header {
+    padding: 8px 12px;
+  }
+
+  .title {
+    font-size: 22px;
+    letter-spacing: 2px;
+  }
+
+  .chipsDisplay {
+    font-size: 16px;
+  }
+
+  .coinIcon {
+    font-size: 20px;
+  }
+
+  .placeholder {
+    width: 60px;
+  }
+
+  .playArea {
+    padding: 8px 12px;
+  }
+
+  .middleArea {
+    min-height: 48px;
+    gap: 4px;
+  }
+
+  .resultMessage {
+    font-size: 22px;
+    padding: 6px 14px;
+  }
+
+  .resultBlackjack {
+    font-size: 28px;
+  }
+
+  .playerArea {
+    gap: 12px;
+  }
+
+  .bottomArea {
+    padding: 4px 0 8px;
+  }
+}
+
+/* Responsive: Mobile */
+@media (max-width: 480px) {
+  .header {
+    padding: 6px 8px;
+  }
+
+  .title {
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+
+  .chipsDisplay {
+    font-size: 14px;
+  }
+
+  .coinIcon {
+    font-size: 16px;
+  }
+
+  .placeholder {
+    width: 40px;
+  }
+
+  .playArea {
+    padding: 4px 6px;
+  }
+
+  .middleArea {
+    min-height: 40px;
+  }
+
+  .resultMessage {
+    font-size: 18px;
+    padding: 4px 10px;
+  }
+
+  .resultBlackjack {
+    font-size: 22px;
+  }
+
+  .betInfo {
+    font-size: 13px;
+  }
+
+  .playerArea {
+    gap: 8px;
+  }
+
+  .bottomArea {
+    padding: 2px 0 6px;
+  }
+}

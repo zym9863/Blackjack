@@ -62,3 +62,63 @@
   font-size: 18px;
   padding: 12px 36px;
 }
+
+/* Responsive: Tablet */
+@media (max-width: 768px) {
+  .bettingArea {
+    gap: 12px;
+    padding: 10px;
+  }
+
+  .chipsRow {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    justify-items: center;
+  }
+
+  .betDisplay {
+    font-size: 18px;
+  }
+
+  .betAmount {
+    font-size: 24px;
+  }
+
+  .btn {
+    min-height: 48px;
+    min-width: 100px;
+    font-size: 16px;
+  }
+
+  .btnDeal {
+    font-size: 16px;
+    padding: 12px 28px;
+  }
+}
+
+/* Responsive: Mobile */
+@media (max-width: 480px) {
+  .bettingArea {
+    gap: 8px;
+    padding: 6px;
+  }
+
+  .betDisplay {
+    font-size: 16px;
+  }
+
+  .betAmount {
+    font-size: 20px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .btnDeal {
+    font-size: 15px;
+    padding: 10px 24px;
+  }
+}

@@ -120,3 +120,59 @@
     opacity: 1;
   }
 }
+
+/* Responsive: Tablet */
+@media (max-width: 768px) {
+  .cardWrapper {
+    width: 60px;
+    height: 84px;
+  }
+
+  .rank {
+    font-size: 11px;
+  }
+
+  .suitSmall {
+    font-size: 8px;
+  }
+
+  .centerSuit {
+    font-size: 20px;
+  }
+
+  .cardFront {
+    padding: 3px 4px;
+  }
+
+  .cardBack {
+    border-width: 2px;
+  }
+}
+
+/* Responsive: Mobile */
+@media (max-width: 480px) {
+  .cardWrapper {
+    width: 50px;
+    height: 70px;
+  }
+
+  .rank {
+    font-size: 10px;
+  }
+
+  .suitSmall {
+    font-size: 7px;
+  }
+
+  .centerSuit {
+    font-size: 16px;
+  }
+
+  .cardFront {
+    padding: 2px 3px;
+  }
+
+  .cardFace {
+    border-radius: 5px;
+  }
+}
