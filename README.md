@@ -1,16 +1,93 @@
-# React + Vite
+[English](./README-EN.md) | **中文**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🃏 21点 (Blackjack)
 
-Currently, two official plugins are available:
+一个使用 React + Vite 构建的21点纸牌游戏。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ 功能特性
 
-## React Compiler
+- 🎮 完整的21点游戏逻辑
+- 💰 筹码系统（支持本地存储）
+- 🔊 音效反馈
+- 🎯 支持以下操作：
+  - **要牌 (Hit)** - 再抽一张牌
+  - **停牌 (Stand)** - 停止要牌
+  - **加倍 (Double Down)** - 加倍下注并只抽一张牌
+  - **分牌 (Split)** - 将相同点数的牌分成两手
+  - **保险 (Insurance)** - 当庄家显示A时购买保险
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🎲 游戏规则
 
-## Expanding the ESLint configuration
+- 使用6副牌（312张）
+- Blackjack赔率 3:2
+- 保险赔率 3:1
+- 最小下注：10
+- 最大下注：500
+- 初始筹码：1000
+- 庄家必须在17点以下要牌
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ 技术栈
+
+- **React 19** - UI框架
+- **Vite 8** - 构建工具
+- **Vitest** - 单元测试
+- **Testing Library** - React组件测试
+
+## 📦 安装与运行
+
+```bash
+# 安装依赖
+pnpm install
+
+# 启动开发服务器
+pnpm dev
+
+# 构建生产版本
+pnpm build
+
+# 预览生产版本
+pnpm preview
+
+# 运行测试
+pnpm test
+
+# 代码检查
+pnpm lint
+```
+
+## 📁 项目结构
+
+```
+src/
+├── App.jsx              # 应用入口组件
+├── main.jsx             # React渲染入口
+├── components/          # UI组件
+│   ├── GameTable.jsx    # 游戏桌面
+│   ├── Hand.jsx         # 手牌显示
+│   ├── Card.jsx         # 单张牌
+│   ├── Controls.jsx     # 游戏控制按钮
+│   ├── BettingArea.jsx  # 下注区域
+│   └── ChipStack.jsx    # 筹码堆
+├── hooks/
+│   └── useGameState.js  # 游戏状态管理Hook
+├── logic/               # 游戏逻辑
+│   ├── deck.js          # 牌组操作
+│   ├── rules.js         # 规则判断
+│   └── dealer.js        # 庄家逻辑
+├── audio/
+│   └── sounds.js        # 音效管理
+└── styles/
+    └── game.css         # 全局样式
+```
+
+## 🎮 游戏流程
+
+1. **下注阶段** - 点击筹码选择下注金额
+2. **发牌** - 点击"发牌"开始游戏
+3. **玩家回合** - 选择要牌、停牌、加倍或分牌
+4. **庄家回合** - 庄家按规则自动要牌
+5. **结算** - 比较点数，计算输赢
+
+## 📄 许可证
+
+MIT
