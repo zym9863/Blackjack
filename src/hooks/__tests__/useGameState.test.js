@@ -125,6 +125,7 @@ describe('gameReducer', () => {
     expect(state.phase).toBe('settled')
     expect(state.result).toBeDefined()
     expect(state.result[0]).toBe('win') // 19 vs 17
+    expect(state.chips).toBe(1100) // 900 + 200 payout
   })
 
   it('should handle new round', () => {
@@ -168,7 +169,8 @@ describe('gameReducer', () => {
     // Player gets exactly one more card, bet doubled, then auto-stand and settle
     expect(state.playerHands[0]).toHaveLength(3)
     expect(state.bets[0]).toBe(200)
-    expect(state.chips).toBe(800)
+    expect(state.result[0]).toBe('win')
+    expect(state.chips).toBe(1200) // 800 + 400 payout
     expect(state.phase).toBe('settled')
   })
 

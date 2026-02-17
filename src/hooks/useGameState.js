@@ -245,6 +245,7 @@ export function gameReducer(state, action) {
         dealerHand: settlement.dealerHand,
         deck: settlement.deck,
         result: settlement.result,
+        chips: state.chips + settlement.payout,
         phase: 'settled',
       }
     }
@@ -293,6 +294,7 @@ export function gameReducer(state, action) {
         dealerHand: settlement.dealerHand,
         deck: settlement.deck,
         result: settlement.result,
+        chips: stateForSettle.chips + settlement.payout,
         phase: 'settled',
       }
     }
