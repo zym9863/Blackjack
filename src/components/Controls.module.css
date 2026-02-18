@@ -1,83 +1,84 @@
 .controls {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 16px;
+  padding: 12px;
 }
 
 .btn {
-  padding: 12px 24px;
-  border-radius: 8px;
-  border: 2px solid #d4a574;
-  background: #1a1a2e;
-  color: #fff;
+  padding: 11px 22px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(21, 28, 35, 0.95) 0%, rgba(11, 16, 22, 0.95) 100%);
+  color: var(--text-main);
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 700;
   font-family: inherit;
   cursor: pointer;
-  transition: all 0.3s ease;
-  min-width: 80px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  min-width: 96px;
+  backdrop-filter: blur(8px);
 }
 
 .btn:hover:not(:disabled) {
-  box-shadow: 0 0 14px rgba(212, 165, 116, 0.5), 0 0 28px rgba(212, 165, 116, 0.2);
-  background: #2a2a3e;
+  border-color: var(--gold-soft);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.38), 0 0 0 1px rgba(226, 191, 131, 0.3) inset;
   transform: translateY(-1px);
 }
 
 .btn:active:not(:disabled) {
-  transform: scale(0.96);
+  transform: scale(0.97);
 }
 
 .btn:disabled {
-  opacity: 0.35;
+  opacity: 0.36;
   cursor: not-allowed;
-  border-color: #555;
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 .btnHit {
-  background: linear-gradient(135deg, #1a3a2e 0%, #1a4a3e 100%);
+  background: linear-gradient(145deg, rgba(21, 67, 49, 0.96) 0%, rgba(14, 42, 33, 0.96) 100%);
 }
 
 .btnStand {
-  background: linear-gradient(135deg, #3a1a1a 0%, #4a2a1a 100%);
+  background: linear-gradient(145deg, rgba(71, 35, 35, 0.96) 0%, rgba(46, 24, 24, 0.96) 100%);
 }
 
 .btnDouble {
-  background: linear-gradient(135deg, #1a1a3e 0%, #2a2a4e 100%);
+  background: linear-gradient(145deg, rgba(28, 38, 72, 0.96) 0%, rgba(17, 24, 48, 0.96) 100%);
 }
 
 .btnSplit {
-  background: linear-gradient(135deg, #2e1a3e 0%, #3e2a4e 100%);
+  background: linear-gradient(145deg, rgba(62, 34, 72, 0.96) 0%, rgba(35, 20, 41, 0.96) 100%);
 }
 
 .btnInsurance {
-  background: linear-gradient(135deg, #2e3a1a 0%, #3e4a2a 100%);
+  background: linear-gradient(145deg, rgba(62, 69, 35, 0.96) 0%, rgba(33, 38, 20, 0.96) 100%);
 }
 
 .btnDecline {
-  background: linear-gradient(135deg, #3a1a1a 0%, #4a2a1a 100%);
-  border-color: #888;
+  background: linear-gradient(145deg, rgba(54, 33, 33, 0.96) 0%, rgba(31, 20, 20, 0.96) 100%);
+  border-color: rgba(255, 255, 255, 0.18);
 }
 
 .btnNewRound {
   font-size: 18px;
-  padding: 14px 32px;
-  background: linear-gradient(135deg, #1a1a2e 0%, #2a2a4e 100%);
+  padding: 12px 28px;
+  background: linear-gradient(145deg, rgba(17, 27, 45, 0.98) 0%, rgba(20, 35, 66, 0.98) 100%);
 }
 
 .btnReset {
   font-size: 14px;
   padding: 10px 20px;
-  border-color: #888;
-  background: #2a1a1a;
+  border-color: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(145deg, rgba(45, 29, 29, 0.96) 0%, rgba(28, 20, 20, 0.96) 100%);
 }
 
 /* Responsive: Tablet */
 @media (max-width: 768px) {
   .controls {
-    padding: 10px;
+    padding: 8px;
     gap: 8px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -87,8 +88,8 @@
   .btn {
     min-height: 48px;
     width: 100%;
-    font-size: 15px;
-    padding: 12px 16px;
+    font-size: 14px;
+    padding: 11px 14px;
   }
 
   .btnNewRound {
@@ -105,14 +106,14 @@
 /* Responsive: Mobile */
 @media (max-width: 480px) {
   .controls {
-    padding: 6px;
+    padding: 4px;
     gap: 6px;
   }
 
   .btn {
-    font-size: 14px;
-    padding: 10px 12px;
-    min-height: 44px;
+    font-size: 13px;
+    padding: 9px 10px;
+    min-height: 42px;
   }
 
   .btnNewRound {

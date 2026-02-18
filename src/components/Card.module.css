@@ -1,20 +1,21 @@
 .cardWrapper {
   width: 80px;
   height: 112px;
-  perspective: 800px;
+  perspective: 920px;
   display: inline-block;
   flex-shrink: 0;
+  filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.3));
 }
 
 .cardWrapper.animated {
-  animation: slideIn 0.4s cubic-bezier(0.23, 1, 0.32, 1) both;
+  animation: slideIn 0.42s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
 
 .cardInner {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
   transform-style: preserve-3d;
 }
 
@@ -29,18 +30,20 @@
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.24);
 }
 
 /* Front face */
 .cardFront {
-  background: #fff;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.94), rgba(247, 244, 236, 0.95)),
+    linear-gradient(165deg, #fefbf5 0%, #f7f1e3 100%);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 4px 6px;
-  border: 1px solid #ccc;
+  padding: 5px 7px;
+  border: 1px solid rgba(28, 31, 37, 0.22);
 }
 
 .cornerTop {
@@ -59,12 +62,12 @@
 }
 
 .rank {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: bold;
 }
 
 .suitSmall {
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .centerSuit {
@@ -72,22 +75,23 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 28px;
+  font-size: 30px;
 }
 
 .red {
-  color: #d32f2f;
+  color: #c63f45;
 }
 
 .black {
-  color: #1a1a1a;
+  color: #1d232d;
 }
 
 /* Back face */
 .cardBack {
   transform: rotateY(180deg);
-  background: #1a237e;
+  background: #172237;
   background-image:
+    radial-gradient(circle at center, rgba(226, 191, 131, 0.16), transparent 52%),
     repeating-linear-gradient(
       45deg,
       transparent,
@@ -102,17 +106,17 @@
       rgba(255, 255, 255, 0.06) 5px,
       rgba(255, 255, 255, 0.06) 10px
     );
-  border: 3px solid #283593;
-  box-shadow: inset 0 0 0 4px #1a237e, inset 0 0 0 5px #5c6bc0;
+  border: 3px solid #2a446f;
+  box-shadow: inset 0 0 0 4px #16223a, inset 0 0 0 5px rgba(226, 191, 131, 0.34);
 }
 
 @keyframes slideIn {
   from {
-    transform: translateX(200px) rotate(8deg);
+    transform: translateX(140px) rotate(6deg);
     opacity: 0;
   }
   60% {
-    transform: translateX(-8px) rotate(-1deg);
+    transform: translateX(-8px) rotate(-1.2deg);
     opacity: 1;
   }
   to {
@@ -137,7 +141,7 @@
   }
 
   .centerSuit {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .cardFront {
@@ -165,7 +169,7 @@
   }
 
   .centerSuit {
-    font-size: 16px;
+    font-size: 17px;
   }
 
   .cardFront {

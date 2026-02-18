@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import Hand from './Hand'
 import Controls from './Controls'
 import BettingArea from './BettingArea'
-import { calculateHandValue, isBusted } from '../logic/rules'
+import { isBusted } from '../logic/rules'
 import { sounds } from '../audio/sounds'
 import styles from './GameTable.module.css'
 
