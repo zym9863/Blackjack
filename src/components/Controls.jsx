@@ -76,15 +76,18 @@ export default function Controls({ state, dispatch, ACTIONS }) {
   }
 
   if (phase === 'settled') {
+    const canContinue = chips >= 10
     return (
       <div className={styles.controls}>
-        <button
-          className={`${styles.btn} ${styles.btnNewRound}`}
-          onClick={() => dispatch({ type: ACTIONS.NEW_ROUND })}
-        >
-          新一局
-        </button>
-        {chips === 0 && (
+        {canContinue && (
+          <button
+            className={`${styles.btn} ${styles.btnNewRound}`}
+            onClick={() => dispatch({ type: ACTIONS.NEW_ROUND })}
+          >
+            新一局
+          </button>
+        )}
+        {!canContinue && (
           <button
             className={`${styles.btn} ${styles.btnReset}`}
             onClick={() => {
